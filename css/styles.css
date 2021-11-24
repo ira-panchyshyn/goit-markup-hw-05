@@ -13,6 +13,9 @@
   --light-background-color: #f5f4fa;
   /* gaps */
   --card-gap: 30px;
+  /* transition  */
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -37,6 +40,12 @@ img {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
+}
+
+.link {
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .link:hover,
@@ -120,6 +129,9 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .header-link-active {
@@ -267,8 +279,31 @@ img {
   margin-right: calc(-1 * var(--card-gap));
 }
 
+.technologies-item {
+  position: relative;
+}
+
 .technologies-item:not(:last-child) {
   margin-right: var(--card-gap);
+}
+
+.technologies-desc {
+  background: rgba(47, 48, 58, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--alternative-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /*----------------- TEAM -------------------*/
@@ -347,6 +382,9 @@ img {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
+  transition-property: background-color, color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .social-link:hover,
@@ -377,11 +415,6 @@ img {
   margin-right: var(--card-gap);
 }
 
-.customers-company:focus,
-.customers-company:hover {
-  border-color: var(--accent-color);
-}
-
 .customers-list {
   display: flex;
   flex-basis: calc(100% / 6 - var(--card-gap));
@@ -396,6 +429,9 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+  transition-property: border-color, color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .customers-link:focus,
@@ -428,6 +464,9 @@ img {
   color: var(--main-text-color);
   background-color: var(--inactive-btn-color);
   padding: 6px 22px;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .filter-button-active,
@@ -486,6 +525,9 @@ img {
 
 .project-link {
   display: block;
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 .project-link:hover,
 .project-link:focus {
