@@ -595,3 +595,61 @@ img {
 .social-link-footer {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+/*-------------- MODAL ------------- */
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  transition-property: opacity, visibility;
+  transition-duration: 500ms;
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(1.2) translate(-100%);
+  transition: transform 1000ms;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  left: 50%;
+  top: 50%;
+
+  background-color: var(--main-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 1000ms;
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-close-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
